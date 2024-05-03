@@ -19,6 +19,7 @@ dependencies:
   google_gemini: ^0.1.2
   image_picker: ^1.0.7
   lottie: ^3.1.0
+  flutter_markdown: ^0.6.20
 
 dev_dependencies:
   flutter_test:
@@ -35,6 +36,8 @@ flutter:
     - assets/
     - assets/images/water.jpg
     - assets/bubble.json
+    - assets/images/104312.jpg
+    - assets/rocket.json
     
 
   

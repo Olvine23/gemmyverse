@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:google_gemini/google_gemini.dart';
 import 'package:lottie/lottie.dart';
 
@@ -32,7 +33,7 @@ class _TextOnlyState extends State<TextOnly> {
       loading = true;
       textChat.add({
         "role": "User",
-        "text": query,
+        "text": "Write me facts about $query",
       });
       _textController.clear();
     });
@@ -98,7 +99,12 @@ class _TextOnlyState extends State<TextOnly> {
                             textChat[index]["role"],
                             style: const TextStyle(fontWeight: FontWeight.bold),
                           ),
-                          subtitle: Text(textChat[index]["text"]),
+                          subtitle: Container(
+                            color: Colors.amberAccent,
+                            height: 50, // Fixed height for the Markdown widget
+                            child: Markdown(data: textChat[index]["text"]),
+                          ),
+                          // subtitle: Text(textChat[index]["text"]),
                         );
                 },
               ),

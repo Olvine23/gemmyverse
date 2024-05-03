@@ -25,22 +25,30 @@ class MyHomePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Lottie.asset('assets/bubble.json'),
-              Text(
-
-                "Welcome to the GemmyVerse",
-                textAlign: TextAlign.center,
-                style: Theme.of(context)
-                    .textTheme
-                    .headlineMedium!
-                    .copyWith(fontWeight: FontWeight.w600),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 20),
+                child: Lottie.asset('assets/rocket.json'),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12),
+                child: Text(
+                
+                  "Welcome to the GemmyVerse",
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context)
+                      .textTheme
+                      .headlineMedium!
+                      .copyWith(fontWeight: FontWeight.w600),
+                ),
               ),
               const SizedBox(
                 height: 4,
               ),
               Text(
                 "Choose your path",
-                style: Theme.of(context).textTheme.headlineSmall,
+                style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                  fontSize: 16
+                ),
               ),
               const SizedBox(
                 height: 15,
@@ -48,7 +56,12 @@ class MyHomePage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ElevatedButton(onPressed: () {
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.purple,
+                      foregroundColor: Colors.white
+                    ),
+                    onPressed: () {
                  Navigator.push(context, MaterialPageRoute(builder: (context){
                   return const TextOnly();
                  }));
@@ -57,6 +70,10 @@ class MyHomePage extends StatelessWidget {
                     width: 10,
                   ),
                   ElevatedButton(
+                     style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.purple,
+                      foregroundColor: Colors.white
+                    ),
                       onPressed: () {
                         Navigator.push(context,
                             MaterialPageRoute(builder: (context) {

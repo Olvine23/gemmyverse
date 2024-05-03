@@ -19,7 +19,7 @@ Future<String> generateContent() async {
   }
 
   final model = GenerativeModel(model: 'gemini-pro', apiKey: apiKey);
-  final content = [Content.text('Write a story about Flutter the framework.')];
+  final content = [Content.text('Write a story about pinnochio.')];
   final response = await model.generateContent(content);
   print(response.text);
   return response.text ?? ''; // Return the generated text
